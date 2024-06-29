@@ -4,12 +4,15 @@ function convertTemperatureRange(startValue, endValue, scale) {
     for (let temp = startValue; temp <= endValue; temp++) {
         if (scale === "C") {
             let fahrenheit = (temp * 9) /5 + 32;
+            document.write(`<p>${temp} Celsius conversion range to Fahrenheit is ${fahrenheit}</p>`);  
             console.log(`${temp}C is equal to ${fahrenheit} F`);
         } else if (scale === "F") {
             let celsius = ((temp - 32) * 5) / 9;  
-            console.log(`${temp}F is equal to ${celsius} C`);
+            document.write(`<p>${temp} Fahrenheit conversion range to Celsius is ${celsius.toFixed(2)}</p>`);
+            console.log(`${temp}F is equal to ${celsius.toFixed(2)} C`);
         } else {  
-            console.log("Invalid scale, Please enter C or F. ");
+            document.getElementById("rangeOfTemperatures").innerHTML = "<p>Invalid selection or cancelled.</p>";
+            console.log("Invalid scale, Please enter C or F.");
         }
     }
 } 
